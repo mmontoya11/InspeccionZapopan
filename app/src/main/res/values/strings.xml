@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Inspección Zapopan</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sistema">Sistema de Control de Infracciones y Multas</string>
+    <string name="direccion">Dirección</string>
+    <string name="iden">Seleccione</string>
+    <string name="usuario">Inspector</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="title_activity_descarga">Descarga</string>
+    <string name="ordenvisita">Orden de visita</string>
+    <string name="numero">Número</string>
+    <string name="fecha">Seleccionar fecha</string>
+    <string name="inspector">Inspector</string>
+    <string name="ife">IFE</string>
+    <string name="noEmpleado">NO empleado</string>
+    <string name="acompanante">Acompañante</string>
+    <string name="noEmpleadoAc">NO empleado ecompañante</string>
+    <string name="ifeAcompanante">IFE ecompañante</string>
+    <string name="datoVisitado">Dato del visitado</string>
+    <string name="nombreV">Nombre visitado</string>
+
+    <string-array name="identificacion_array">
+        <item>IFE</item>
+        <item>Licencia de conducir</item>
+        <item>Cartilla</item>
+        <item>Ninguna</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="manifiesta_array">
+        <item>Encargado de obra</item>
+        <item>Albañil</item>
+        <item>Trabajador de obra</item>
+        <item>Director responsable de obra</item>
+        <item>Representante de obra</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string name="fraccionamiento">Fraccionamiento/colonia/población</string>
+    <string name="numeroc">Ext</string>
+    <string name="calle">Nombre de calle</string>
+    <string name="propietario">Propietario o razón social</string>
+    <string name="testigos">Testigo de asistencia</string>
+    <string name="nombreTestigo">Nombre de testigo</string>
+    <string name="designado">Designado por</string>
+    <string name="visita">Visita</string>
+    <string name="especificacion">Especificación</string>
+    <string name="infraccion">Infracción</string>
+    <string name="nota">Nota aclaratoria</string>
+    <string name="uso">Uso de suelo</string>
+
+    <string-array name="uso_array">
+        <item>Habitacional</item>
+        <item>Comercial</item>
+    </string-array>
+
+    <string name="densidad">Densidad</string>
+    <string name="visitadom">Visitado manifiesta</string>
+    <string name="diasplazo">Días</string>
+
+    <string-array name="gravedad_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="guardar">Guardar</string>
+    <string name="fecham">Fecha</string>
+    <string name="apercibimiento">Apercibimiento</string>
+    <string name="title">Dirección de obras publicas</string>
+    <string name="inicio">Inicio</string>
+    <string name="zona">Zona</string>
+
+    <string-array name="zona_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string name="vigencia">Vigencia</string>
+    <string name="identifica">Se identifica con:</string>
+    <string name="especificar">Especifique</string>
+    <string name="manifiesta">Manifiesta ser</string>
+
+    <string-array name="designado_array">
+        <item>Inspector</item>
+        <item>Visitado</item>
+    </string-array>
+
+    <string name="hechos">Hechos</string>
+    <string name="gravedad">Gravedad</string>
+    <string name="descripcion">Descripción</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="modificar">Modificar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="plazo">Días de plazo</string>
+    <string name="tomarFoto">Tomar fotografía</string>
+    <string name="acta">Acta</string>
+    <string name="imprimir">Imprimir</string>
+    <string name="consultar">Consulta</string>
+    <string name="numero_interior">Int </string>
+    <string name="apellido_paterno">Apellido Paterno</string>
+    <string name="apellido_materno">Apellido Materno</string>
+    <string name="opcion">Desea Utilizar el Catalogo de Hechos</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="citatorio">Citatorio</string>
+    <string name="num_acta">Número Acta</string>
+    <string name="posicion">Posición  geográfica</string>
+    <string name="latitud">Latitud:</string>
+    <string name="longitud">Longitud:</string>
+    <string name="evidencia">Evidencia fotografica</string>
+    <string name="v_fecha">Visualizar fecha</string>
+    <string name="type">Tipo de visita:</string>
+    <string name="descarga_datos">Descarga de datos</string>
+    <string name="actualizacion">Actualización de Base de Datos</string>
+    <string name="salir">Salir</string>
+    <string name="descarga_foto">Descarga de fotografía</string>
+    <string name="btn_infraccion">Levantamiento de infracción</string>
+    <string name="fraccion">Fraccionamiento</string>
+    <string name="mostrar">Mostrar</string>
+    <string name="ubicacion">Ubicación</string>
+    <string name="propietarion">Propietario</string>
+    <string name="c">C-</string>
+    <string name="ov">OV-</string>
+    <string name="fecha_elaboracion">Fecha de elaboración</string>
+    <string name="poblacion">Población</string>
+    <string name="fracc">Fraccionamiento</string>
+    <string name="coto">Condominio</string>
+    <string name="identificacion">Identificación</string>
+    <string name="manzana">Manzana</string>
+    <string name="lote">Lote</string>
+    <string name="unidad">Unidad</string>
+    <string name="ftp_foto">Enviar fografías</string>
+    <string name="referencia">Referencia</string>
+    <string name="email">Correo electronico</string>
+    <string name="buscar">Buscar</string>
+    <string name="folio">Folio</string>
+    <string name="no_reincidencia">No reincidencia</string>
+    <string name="reincidencia">Reincidencia</string>
+    <string name="flagancia">Flagrancia</string>
+    <string name="licencia">Licencias</string>
+    <string name="alineamiento">Alineamiento</string>
+    <string name="construccion">Construcción</string>
+    <string name="giro">Giro</string>
+    <string name="motivo">Alcances de la presente orden de visita</string>
+    <string name="descarga">Descarga de datos</string>
+    <string name="lectura">Lectura</string>
+    <string name="config">Configurar tableta</string>
+    <string name="competerncia">Competencia especifíca</string>
+    <string name="entre">Entre la calle </string>
+    <string name="entre1">Y la calle</string>
+    <string name="director_responsable">Director responsable</string>
+    <string name="registro">Registro</string>
+    <string name="medida">Medida precautoria a tomar</string>
+    <string name="art">Articulos</string>
+    <string name="firma">El visitado firma</string>
+    <string name="inspecion_fue">Realizando la inspección a peticion de</string>
+    <string name="buscar_p">Buscar palabra</string>
+    <string name="vista">Vista previa</string>
+    <string name="ver_f">Ver fotografía</string>
+    <string name="d_app">Descargar App</string>
+    <string name="fecha1">17/05/2016</string>
+    <string name="title_activity_configurar">Configurar</string>
+    <string name="serie">Serie</string>
+    <string name="l_giro">Número de licencia</string>
+    <string name="giro1">Actividad o giro</string>
+    <string name="al">Año de la licencia</string>
+    <string name="dato_l">Titular licencia</string>
+    <string name="titular">Titular</string>
+    <string name="sector">Sector</string>
+    <string name="nombre_comercial">Nombre comercial</string>
+    <string name="indique">Indique el número de identificación</string>
+    <string name="donde_ubica">Donde se ubica</string>
+    <string name="verificar">Verificar que cuente con</string>
+    <string name="consultar_licencias">Consultar licencia</string>
+    <string name="title_activity_consultar_licencias">Consultar Licencias</string>
+    <string name="accion">Acción</string>
+
+    <string-array name="accion">
+        <item></item>
+        <item>Consultar catalogo calles</item>
+        <item>Consultar licencia por propietario</item>
+        <item>Consultar licencia por domicilio</item>
+    </string-array>
+
+    <string name="cve_calle">Clave calle</string>
+    <string name="let_ext">Letra exterior</string>
+    <string name="num_int">Número interior</string>
+    <string name="num_ext">Número exterior</string>
+    <string name="let_int">Letra interior</string>
+    <string name="title_activity_consultar_infracciones">Consultar Infracciones</string>
+    <string name="n_ofiico">Oficio</string>
+    <string name="reimprimir">Reimprimir</string>
+    <string name="title_activity_reimprimir">Reimprimir</string>
+    <string name="title_activity_infracciones">Infracción</string>
+
+</resources>
