@@ -696,7 +696,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
         //spReglamento.setVisibility(View.GONE);
 		//tvReg.setVisibility(View.GONE);
         
-        this.btnImprimir.setEnabled(false);
+        this.btnImprimir.setEnabled(true);
         
         this.tvTitle.setText(direccion);
         
@@ -1568,6 +1568,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
         
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.gravedad_array, android.R.layout.simple_spinner_dropdown_item);
         spgravedad.setAdapter(adapter3);
+        spNE.setAdapter(adapter3);
         
         ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this, R.array.designado_array, android.R.layout.simple_spinner_dropdown_item);
         spdesignado.setAdapter(adapter5);
@@ -2250,11 +2251,11 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 				if(b.isChecked()) {
 					
 					medidas(campoReg.get(v.getId()));
-					if(id != 3)
-						adapter.notifyDataSetChanged();
+					/*if(id != 3)
+						adapter.notifyDataSetChanged();*/
 		    		
-					comp[id] = competencia.get(v.getId()) + " " + b.getText().toString();
-					iComp[id] = idCompetencia.get(v.getId());
+					//comp[id] = competencia.get(v.getId()) + " " + b.getText().toString();
+					//iComp[id] = idCompetencia.get(v.getId());
 				}
 				else {
 					comp[(v.getId())-1] = "";
@@ -3690,7 +3691,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	SQLiteDatabase db = gestionBD.getReadableDatabase();
     	if(db != null) {
     		try {
-				Cursor c = db.rawQuery("SELECT nombre FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and (trim(vigente) = 'S' or trim(vigente) = 's')" , null);
+				Cursor c = db.rawQuery("SELECT nombre FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and trim(vigente) = 'S'" , null);
 				if (c.moveToFirst()) {
 					do {
 						nombre = c.getString(0);
@@ -3713,7 +3714,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	if(db != null) {
     		try {
     			id_i2.clear();
-				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_inspector WHERE id_c_inspector = '" + idinspector + "' and (trim(vigente) = 'S' or trim(vigente) = 's')" , null);
+				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_inspector WHERE id_c_inspector = '" + idinspector + "' and trim(vigente) = 'S'" , null);
 				if (c.moveToFirst()) {
 					do {
 						nombre = c.getString(0);
@@ -3737,7 +3738,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	if(db != null) {
     		try {
     			id_i3.clear();
-				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and (trim(vigente) = 'S' or trim(vigente) = 's')" , null);
+				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and trim(vigente) = 'S'" , null);
 				if (c.moveToFirst()) {
 					do {
 						nombre = c.getString(0);
@@ -3761,7 +3762,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	if(db != null) {
     		try {
     			id_i4.clear();
-				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and (trim(vigente) = 'S' trim(vigente) = 's')" , null);
+				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and trim(vigente) = 'S'" , null);
 				if (c.moveToFirst()) {
 					do {
 						nombre = c.getString(0);
@@ -3785,7 +3786,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	if(db != null) {
     		try {
     			id_i5.clear();
-				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and (trim(vigente) = 'S' ortrim(vigente) = 'S')" , null);
+				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and trim(vigente) = 'S'" , null);
 				if (c.moveToFirst()) {
 					do {
 						nombre = c.getString(0);
@@ -3809,7 +3810,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	if(db != null) {
     		try {
     			id_i6.clear();
-				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and (trim(vigente) = 'S' or trim(vigente) = 's')" , null);
+				Cursor c = db.rawQuery("SELECT nombre,id_c_inspector FROM C_Inspector WHERE id_c_inspector = '" + idinspector + "' and trim(vigente) = 'S'" , null);
 				if (c.moveToFirst()) {
 					do {
 						nombre = c.getString(0);
@@ -4619,7 +4620,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	GestionBD gestionarBD = new GestionBD(this,"inspeccion",null,1);
     	SQLiteDatabase db = gestionarBD.getReadableDatabase();
     	try{
-    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and (trim(vigente) = 'S' or trim(vigente) = 's')", null);
+    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and trim(vigente) = 'S'", null);
     		if(c.moveToFirst()){
     			do{
     				ifeA = c.getString(2);
@@ -4646,7 +4647,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	GestionBD gestionarBD = new GestionBD(this,"inspeccion",null,1);
     	SQLiteDatabase db = gestionarBD.getReadableDatabase();
     	try{
-    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and (trim(vigente) = 'S' or trim(vigente) = 's')", null);
+    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and trim(vigente) = 'S'", null);
     		if(c.moveToFirst()){
     			do{
     				ifeA1 = c.getString(2);
@@ -4673,7 +4674,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	GestionBD gestionarBD = new GestionBD(this,"inspeccion",null,1);
     	SQLiteDatabase db = gestionarBD.getReadableDatabase();
     	try{
-    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and (trim(vigente) = 'S' or trim(vigente) = 's')", null);
+    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and trim(vigente) = 'S'", null);
     		if(c.moveToFirst()){
     			do{
     				ifeA2 = c.getString(2);
@@ -4700,7 +4701,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	GestionBD gestionarBD = new GestionBD(this,"inspeccion",null,1);
     	SQLiteDatabase db = gestionarBD.getReadableDatabase();
     	try{
-    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and (trim(vigente) = 'S' or trim(vigente) = 's')", null);
+    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and trim(vigente) = 'S'", null);
     		if(c.moveToFirst()){
     			do{
     				ifeA3 = c.getString(2);
@@ -4727,7 +4728,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	GestionBD gestionarBD = new GestionBD(this,"inspeccion",null,1);
     	SQLiteDatabase db = gestionarBD.getReadableDatabase();
     	try{
-    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and (trim(vigente) = 'S' or trim(vigente) = 's')", null);
+    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + nom + "' and trim(vigente) = 'S'", null);
     		if(c.moveToFirst()){
     			do{
     				ifeA4 = c.getString(2);
@@ -6739,7 +6740,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 				        canvas.endText();
 				        canvas.restoreState();
 					    
-					    txt = Justificar.justifocarTexto1(etSeleccion.getText().toString() + ". En atencion a " + spPeticion.getSelectedItem().toString(), 150);
+					    txt = Justificar.justifocarTexto1(etSeleccion.getText().toString() + ". En atencion a " + spPeticion.getSelectedItem().toString(), 110);
 					    int li = 550;
 					    
 					    for (int i = 0; i < txt.length; i++) {
@@ -6756,7 +6757,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					        li-=10;
 						}
 					    
-					    txt = Justificar.justifocarTexto1(etInfraccion.getText().toString(), 150);
+					    txt = Justificar.justifocarTexto1(etInfraccion.getText().toString(), 110);
 					    li = 455;
 					    
 					    for (int i = 0; i < txt.length; i++) {
@@ -6773,7 +6774,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					        li-=10;
 						}
 					    
-					    txt = Justificar.justifocarTexto1(etMedida.getText().toString(), 150);
+					    txt = Justificar.justifocarTexto1(etMedida.getText().toString(), 110);
 					    li = 390;
 					    
 					    for (int i = 0; i < txt.length; i++) {
@@ -6790,7 +6791,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					        li-=10;
 						}
 					    
-					    txt = Justificar.justifocarTexto1(etArticulo.getText().toString(), 150);
+					    txt = Justificar.justifocarTexto1(etArticulo.getText().toString(), 110);
 					    li = 335;
 					    
 					    for (int i = 0; i < txt.length; i++) {
@@ -6839,8 +6840,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(50, 150);
-                            canvas.showText("__");
+                            canvas.moveText(75, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         } else if(spgravedad.getSelectedItem().toString().equalsIgnoreCase("2")) {
@@ -6848,8 +6849,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(52, 150);
-                            canvas.showText("__");
+                            canvas.moveText(80, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         } else if(spgravedad.getSelectedItem().toString().equalsIgnoreCase("3")) {
@@ -6857,8 +6858,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(54, 150);
-                            canvas.showText("__");
+                            canvas.moveText(85, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         } else if(spgravedad.getSelectedItem().toString().equalsIgnoreCase("4")) {
@@ -6866,8 +6867,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(56, 150);
-                            canvas.showText("__");
+                            canvas.moveText(90, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         }else  {
@@ -6875,8 +6876,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(58, 150);
-                            canvas.showText("__");
+                            canvas.moveText(95, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         }
@@ -6886,8 +6887,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(150, 150);
-                            canvas.showText("__");
+                            canvas.moveText(220, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         } else if(spNE.getSelectedItem().toString().equalsIgnoreCase("2")) {
@@ -6895,8 +6896,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(152, 150);
-                            canvas.showText("__");
+                            canvas.moveText(225, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         } else if(spNE.getSelectedItem().toString().equalsIgnoreCase("3")) {
@@ -6904,8 +6905,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(154, 150);
-                            canvas.showText("__");
+                            canvas.moveText(230, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         } else if(spNE.getSelectedItem().toString().equalsIgnoreCase("4")) {
@@ -6913,8 +6914,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(156, 150);
-                            canvas.showText("__");
+                            canvas.moveText(235, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         }else  {
@@ -6922,8 +6923,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(158, 150);
-                            canvas.showText("__");
+                            canvas.moveText(240, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         }
@@ -6933,8 +6934,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(258, 150);
-                            canvas.showText("__");
+                            canvas.moveText(360, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         } else {
@@ -6942,8 +6943,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                             canvas.beginText();
                             canvas.setFontAndSize(bf, 9);
-                            canvas.moveText(260, 150);
-                            canvas.showText("__");
+                            canvas.moveText(365, 145);
+                            canvas.showText("X");
                             canvas.endText();
                             canvas.restoreState();
                         }
@@ -11502,7 +11503,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	GestionBD gestionarBD = new GestionBD(this,"inspeccion",null,1);
     	SQLiteDatabase db = gestionarBD.getReadableDatabase();
     	try{
-    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + sp.getSelectedItem().toString().trim() + "' and (trim(vigente) = 'S' or trim(vigente) = 's')", null);
+    		Cursor c = db.rawQuery("SELECT * FROM C_Inspector WHERE nombre = '" + sp.getSelectedItem().toString().trim() + "' and trim(vigente) = 'S'", null);
     		if(c.moveToFirst()){
     			do{
     				if(sp.getId() == R.id.spInspectorT) {
