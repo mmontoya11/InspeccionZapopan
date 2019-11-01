@@ -205,5 +205,7 @@
     <string name="reimprimir">Reimprimir</string>
     <string name="title_activity_reimprimir">Reimprimir</string>
     <string name="title_activity_infracciones">Infracción</string>
+    <string name="ne">Nivel Economico</string>
+    <string name="re">Reincidencia</string>
 
 </resources>

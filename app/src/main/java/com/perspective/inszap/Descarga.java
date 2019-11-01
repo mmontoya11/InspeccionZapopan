@@ -138,9 +138,9 @@ public class Descarga extends Activity implements android.content.DialogInterfac
 		
 		//if(us.equalsIgnoreCase("administrador") | us.equalsIgnoreCase("subadministrador")) {
 		
-		System.out.println(direccion);
+		System.out.println(direccion.equalsIgnoreCase("Administración"));
 
-		if(direccion.equalsIgnoreCase("administracion") | direccion.equalsIgnoreCase("administraci�n")) {
+		if(direccion.equalsIgnoreCase("administracion") | direccion.equalsIgnoreCase("Administración")) {
 			btnInfraccion.setEnabled(false);
 			btnDescargarD.setEnabled(false);
 			btnDescargarF.setEnabled(false);
@@ -346,7 +346,7 @@ public class Descarga extends Activity implements android.content.DialogInterfac
 								c.getInt(c.getColumnIndex("id_c_inspector3")),c.getInt(c.getColumnIndex("id_c_inspector4")),c.getInt(c.getColumnIndex("id_c_inspector5")),c.getInt(c.getColumnIndex("id_c_inspector6")),
 								c.getInt(c.getColumnIndex("id_c_competencia1")),c.getInt(c.getColumnIndex("id_c_competencia2")),c.getInt(c.getColumnIndex("id_c_competencia3")),c.getInt(c.getColumnIndex("id_c_competencia4")),c.getInt(c.getColumnIndex("id_c_competencia5")),
 								c.getString(c.getColumnIndex("licencia_giro")),c.getString(c.getColumnIndex("actividad_giro")),c.getInt(c.getColumnIndex("axo_licencia")),
-								c.getString(c.getColumnIndex("nombre_comercial")),c.getString(c.getColumnIndex("sector")),con,/*"http://172.16.1.21/serverSQL/insertLevantamiento.php"*/ "http://10.10.23.54/infracciones/serversql/insertLevantamientoas.php"/*"http://pgt.no-ip.biz/serverSQL/insertLevantamiento.php" "http://10.10.23.54/infracciones/serverSQL/insertLevantamiento.php"*/).equalsIgnoreCase("S")) {
+								c.getString(c.getColumnIndex("nombre_comercial")),c.getString(c.getColumnIndex("sector")),con,c.getString(c.getColumnIndex("peticion")),c.getString(c.getColumnIndex("nivel_economico")),c.getString(c.getColumnIndex("reincidencia")),/*"http://172.16.1.21/serverSQL/insertLevantamiento.php"*/ "http://10.10.23.54/infracciones/serversql/insertLevantamientoas.php"/*"http://pgt.no-ip.biz/serverSQL/insertLevantamiento.php" "http://10.10.23.54/infracciones/serverSQL/insertLevantamiento.php"*/).equalsIgnoreCase("S")) {
 								
 								System.out.println("si");
 								ContentValues cv = new ContentValues();

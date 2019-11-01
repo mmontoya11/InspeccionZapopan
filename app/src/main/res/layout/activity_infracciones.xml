@@ -2181,6 +2181,36 @@
 							android:layout_height="wrap_content"
 							android:prompt="@string/iden"
 							android:layout_gravity="center_horizontal"/>
+
+						<TextView
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/ne"
+							android:gravity="center"
+							style="@style/Div"/>
+
+
+						<Spinner
+							android:id="@+id/spNE"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:prompt="@string/iden"
+							android:layout_gravity="center_horizontal"/>
+
+						<TextView
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/re"
+							android:gravity="center"
+							style="@style/Div"/>
+
+						<Switch
+							android:id="@+id/swReincidencia"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/re"
+							android:textOn="@android:string/yes"
+							android:textOff="@android:string/no"/>
 						
 						
 					
