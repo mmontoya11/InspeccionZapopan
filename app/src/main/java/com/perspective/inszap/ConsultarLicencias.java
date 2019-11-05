@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,13 @@ public class ConsultarLicencias extends Activity implements View.OnClickListener
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.btnBuscar:
-				new BuscarL().execute(etNombre.getText().toString(),etNumeroL.getText().toString(),etCalle.getText().toString(),etExterior.getText().toString(),etColonia.getText().toString());
+				if(validarCampos() < 5)
+					new BuscarL().execute(etNombre.getText().toString(),etNumeroL.getText().toString(),etCalle.getText().toString(),etExterior.getText().toString(),etColonia.getText().toString());
+				else {
+					Toast toast = Toast.makeText(getApplicationContext(),"Debe ingresar por lo menos un filtro de busqueda",Toast.LENGTH_LONG);
+					toast.setGravity(0,0,15);
+					toast.show();
+				}
 				break;
 		}
 	}
@@ -69,6 +76,11 @@ public class ConsultarLicencias extends Activity implements View.OnClickListener
 		@Override
 		protected void onPostExecute(Boolean aBoolean) {
 			super.onPostExecute(aBoolean);
+			if(datos.isEmpty()) {
+				Toast toast = Toast.makeText(ConsultarLicencias.this, "No se encontro licencia", Toast.LENGTH_SHORT);
+				toast.setGravity(0,0,15);
+				toast.show();
+			}
 			adapter.notifyDataSetChanged();
 		}
 	}
@@ -95,7 +107,7 @@ public class ConsultarLicencias extends Activity implements View.OnClickListener
 			if(c.moveToFirst()){
 				Log.i("no", c.getCount() + "");
 				do{
-					datos.add("Nombre:" + c.getString(c.getColumnIndex("Nombre")) + " Número licencia:" + c.getString(c.getColumnIndex("NumeroLicencia")) + " Calle:" + c.getString(c.getColumnIndex("Calle")) + " Exterior:" + c.getString(c.getColumnIndex("Exterior")) + " Colonia:" + c.getString(c.getColumnIndex("NombreColonia")) + " Giro:" + c.getString(c.getColumnIndex("GiroPrincipal")) + " Categoria:" + c.getString(c.getColumnIndex("GiroPrincipal")));
+					datos.add("Nombre:" + c.getString(c.getColumnIndex("Nombre")) + " Número licencia:" + c.getString(c.getColumnIndex("NumeroLicencia")) + " Calle:" + c.getString(c.getColumnIndex("NombreCalle")) + " Exterior:" + c.getString(c.getColumnIndex("Exterior")) + " Colonia:" + c.getString(c.getColumnIndex("NombreColonia")) + " Giro:" + c.getString(c.getColumnIndex("GiroPrincipal")) + " Categoria:" + c.getString(c.getColumnIndex("GiroPrincipal")));
 				}while(c.moveToNext());
 
 			}
@@ -105,5 +117,20 @@ public class ConsultarLicencias extends Activity implements View.OnClickListener
 		}finally{
 			db.close();
 		}
+	}
+
+	public int validarCampos() {
+		int count = 0;
+		if(etNombre.getText().toString().trim().equalsIgnoreCase(""))
+			count++;
+		if(etNumeroL.getText().toString().trim().equalsIgnoreCase(""))
+			count++;
+		if(etExterior.getText().toString().trim().equalsIgnoreCase(""))
+			count++;
+		if(etCalle.getText().toString().trim().equalsIgnoreCase(""))
+			count++;
+		if(etColonia.getText().toString().trim().equalsIgnoreCase(""))
+			count++;
+		return count;
 	}
 }
