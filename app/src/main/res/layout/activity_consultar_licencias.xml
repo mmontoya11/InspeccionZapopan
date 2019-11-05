@@ -6,11 +6,111 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center"
     tools:context="com.perspective.inszap.ConsultarLicencias" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvNumeroL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número Licencia"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/etNumeroL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvNumeroL"
+        android:layout_marginLeft="10dp"
+        android:hint="Numero Licencia"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/etNumeroL"/>
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvNumeroL"
+        android:layout_marginLeft="10dp"
+        android:hint="Nombre"
+        android:layout_below="@+id/etNumeroL"/>
+
+    <TextView
+    android:id="@+id/tvCalle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Calle"
+    android:layout_marginTop="10dp"
+    android:layout_below="@+id/etNombre"/>
+
+    <EditText
+        android:id="@+id/etCalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvNumeroL"
+        android:layout_marginLeft="10dp"
+        android:hint="Calle"
+        android:layout_below="@+id/etNombre"/>
+
+    <TextView
+        android:id="@+id/tvExterior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número Ext"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/etCalle"/>
+
+    <EditText
+        android:id="@+id/etExterior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvNumeroL"
+        android:layout_marginLeft="10dp"
+        android:hint="Número Ext"
+        android:layout_below="@+id/etCalle"/>
+
+    <TextView
+        android:id="@+id/tvColonia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Colonia"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/etExterior"/>
+
+    <EditText
+        android:id="@+id/etColonia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvNumeroL"
+        android:layout_marginLeft="10dp"
+        android:hint="Colonia"
+        android:layout_below="@+id/etExterior"/>
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etColonia"
+        android:text="@android:string/search_go"/>
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBuscar">
+    </ListView>
 
 </RelativeLayout>
