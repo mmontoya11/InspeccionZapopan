@@ -103,7 +103,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 	private final String DECLARA = "A su vez, el visitado en ejercicio de su derecho y en uso de la voz declara:"; 
 	private int mYear,mMonth,mDay,a,m,di,diaPlazo=0,con = 0,contc = 0,contz = 0,contl = 0,conto = 0, co = 0,foto = 0,id,infrac = 1,id_inspector1,id_inspector2,id_infra,nuevo = 0,pos = 0,infraccion=0,id_inspector3 = 0,id_inspector4 = 0,id_inspector5 = 0,id_inspector6 = 0,idCompetencia1 = 0,idCompetencia2 = 0,idCompetencia3 = 0,idCompetencia4 = 0,idCompetencia5 = 0,conf = 0;
 	private Spinner spnombre,spNombreA,spNombreA1,spNombreA2,spNombreA3,spNombreA4,spIdentifica,spManifiesta,spuso,spgravedad,spZona,spdesignado,spdesignado1,spInfraccion,spconsultar,spPoblacion,spFraccionamiento,spIdentificaT,spIdentificaT1,spReglamento,spMedida,spInspectorT,spInspectorT1,spPeticion,spNE;
-	private EditText etNum,etFecham,etfecha,etDiaPlazo,etIfeI,etNoI,etVigI,etIfeA,etIfeA1,etIfeA2,etIfeA3,etIfeA4,etNoA,etNoA1,etNoA2,etNoA3,etNoA4,etVigA,etVigA1,etVigA2,etVigA3,etVigA4,etNombreT,etIfeT,etInfraccion,etDesc,etDesc1,etDesc2,etDesc3,etDesc4,etdato,etdato1,etdato2,etdato3,etdato4,desf,desf1,desf2,etSeleccion,etNombreV,etFraccionamiento,etCalle,etNumero,etPropietario,etNombreT1,etIfeT2,etManifiesta,etNuemroInterior,etApellidoP,etApellidoM,etCitatorio,etNumeroActa,etEspecificacion,etDFoto,etDFoto1,etDFoto2,etDFoto3,etVManifiesta,etVIdentifica,etLatitud,etLongitud,etAnoCitatorio,etAnoOrden,etCondominio/*etDensidad*/,etManzana,etLote,etReferencia,etBuscar,etCorreo,etfolio,/*etAlineamiento,*/etConstruccion, etGiro, etMotivo,etOrden1,etEntreC,etEntreC1,etResponsable,etRegistro,etMedida,etArticulo,etInspccionFue,etDFoto4,etDFoto5,etDFoto6,etDFoto7,etDFoto8,etDFoto9,etDFoto10,etDFoto11,etDFoto12,etDFoto13,etDFoto14,etDFoto15,etDFoto16,etDFoto17,etDFoto18,etDFoto19,etLGiro,etAGiro,etAlicencia,etSector,etNombreComercial;
+	private EditText etNum,etFecham,etfecha,etDiaPlazo,etIfeI,etNoI,etVigI,etIfeA,etIfeA1,etIfeA2,etIfeA3,etIfeA4,etNoA,etNoA1,etNoA2,etNoA3,etNoA4,etVigA,etVigA1,etVigA2,etVigA3,etVigA4,etNombreT,etIfeT,etInfraccion,etDesc,etDesc1,etDesc2,etDesc3,etDesc4,etdato,etdato1,etdato2,etdato3,etdato4,desf,desf1,desf2,etSeleccion,etNombreV,etFraccionamiento,etCalle,etNumero,etPropietario,etNombreT1,etIfeT2,etManifiesta,etNuemroInterior,etApellidoP,etApellidoM,etCitatorio,etNumeroActa,etEspecificacion,etDFoto,etDFoto1,etDFoto2,etDFoto3,etVManifiesta,etVIdentifica,etLatitud,etLongitud,etAnoCitatorio,etAnoOrden,etCondominio/*etDensidad*/,etManzana,etLote,etReferencia,etBuscar,etfolio,/*etAlineamiento,*/etConstruccion, etGiro, etMotivo,etOrden1,etEntreC,etEntreC1,etResponsable,etRegistro,etMedida,etArticulo,etInspccionFue,etDFoto4,etDFoto5,etDFoto6,etDFoto7,etDFoto8,etDFoto9,etDFoto10,etDFoto11,etDFoto12,etDFoto13,etDFoto14,etDFoto15,etDFoto16,etDFoto17,etDFoto18,etDFoto19,etLGiro,etAGiro,etAlicencia,etSector,etNombreComercial;
 	private LinearLayout lldiv,cons,llNota,llplazo,llreincidencia,llcomp;
 	private RelativeLayout rlcampo,rlProp,rlTestA,rlVisita,rlLicencias;
 	private RadioGroup /*radiogroup,*/rgReincidencia;
@@ -390,7 +390,6 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
         this.etReferencia = (EditText)findViewById(R.id.etReferencia);
         this.etBuscar = (EditText)findViewById(R.id.etBuscar);
         btnB = (Button)findViewById(R.id.btnBuscar);
-        etCorreo = (EditText)findViewById(R.id.etEmail);
         rlProp = (RelativeLayout)findViewById(R.id.rlPropietar);
         rlTestA = (RelativeLayout)findViewById(R.id.rlTestAsist);
         rlVisita = (RelativeLayout)findViewById(R.id.rlVisita);
@@ -793,7 +792,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
         buscarNombreCampo();
         buscarOrdenamientos();
         competencia();
-        medidas("");
+
         etDiaPlazo.setText("20");
 		etDiaPlazo.setEnabled(false);
 		etNombreT.setText("HO");
@@ -1200,7 +1199,6 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 				etRegistro.setEnabled(false);
 				etEntreC.setEnabled(false);
 				etEntreC1.setEnabled(false);
-				etCorreo.setEnabled(false);
 				etMedida.setEnabled(false);
 				etArticulo.setEnabled(false);
 				/*btnFtp.setEnabled(true);
@@ -1255,7 +1253,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					buscarInfraccion(spInfraccion.getSelectedItem().toString());
 					if(!desc){
 						etDesc.setVisibility(View.VISIBLE);
-						/*if(!unidad.trim().equalsIgnoreCase("")){
+						if(!unidad.trim().equalsIgnoreCase("")){
 							Toast toast = Toast.makeText(InfraccionesActivity.this, "Debe Ingrese la cantidad", Toast.LENGTH_LONG);
 							toast.setGravity(0, 0, 15);
 							toast.show();
@@ -1264,7 +1262,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 							tvuni.setVisibility(View.VISIBLE);
 							tvuni.setText(unidad);
 							tvuni.setFocusable(true);
-						}*/
+						}
 						des = (String)spInfraccion.getItemAtPosition(position);
 						etDesc.setText((String)spInfraccion.getItemAtPosition(position));
 						tveliminar.setVisibility(View.VISIBLE);
@@ -1274,7 +1272,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					}
 					else if(!desc1){
 						etDesc1.setVisibility(View.VISIBLE);
-						/*if(!unidad.trim().equalsIgnoreCase("")){
+						if(!unidad.trim().equalsIgnoreCase("")){
 							Toast toast = Toast.makeText(InfraccionesActivity.this, "Debe Ingrese la cantidad", Toast.LENGTH_LONG);
 							toast.setGravity(0, 0, 15);
 							toast.show();
@@ -1283,7 +1281,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 							tvuni1.setVisibility(View.VISIBLE);
 							tvuni1.setText(unidad);
 							tvuni1.setFocusable(true);
-						}*/
+						}
 						des1 = (String)spInfraccion.getItemAtPosition(position);
 						tveliminar1.setVisibility(View.VISIBLE);
 						etDesc1.setText(t);
@@ -1292,7 +1290,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					}
 					else if(!desc2){
 						etDesc2.setVisibility(View.VISIBLE);
-						/*if(!unidad.trim().equalsIgnoreCase("")){
+						if(!unidad.trim().equalsIgnoreCase("")){
 							Toast toast = Toast.makeText(InfraccionesActivity.this, "Debe Ingrese la cantidad", Toast.LENGTH_LONG);
 							toast.setGravity(0, 0, 15);
 							toast.show();
@@ -1301,7 +1299,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 							tvuni2.setVisibility(View.VISIBLE);
 							tvuni2.setText(unidad);
 							tvuni2.setFocusable(true);
-						}*/
+						}
 						des2 = (String)spInfraccion.getItemAtPosition(position);
 						tveliminar2.setVisibility(View.VISIBLE);
 						etDesc2.setText(t);
@@ -1310,7 +1308,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					}
 					else if(!desc3){
 						etDesc3.setVisibility(View.VISIBLE);
-						/*if(!unidad.trim().equalsIgnoreCase("")){
+						if(!unidad.trim().equalsIgnoreCase("")){
 							Toast toast = Toast.makeText(InfraccionesActivity.this, "Debe Ingrese la cantidad", Toast.LENGTH_LONG);
 							toast.setGravity(0, 0, 15);
 							toast.show();
@@ -1319,7 +1317,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 							tvuni3.setVisibility(View.VISIBLE);
 							tvuni3.setText(unidad);
 							tvuni3.setFocusable(true);
-						}*/
+						}
 						des3 = (String)spInfraccion.getItemAtPosition(position);
 						tveliminar3.setVisibility(View.VISIBLE);
 						etDesc3.setText(des3);
@@ -1328,7 +1326,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 					}
 					else{
 						etDesc4.setVisibility(View.VISIBLE);
-						/*if(!unidad.trim().equalsIgnoreCase("")){
+						if(!unidad.trim().equalsIgnoreCase("")){
 							Toast toast = Toast.makeText(InfraccionesActivity.this, "Debe Ingrese la cantidad", Toast.LENGTH_LONG);
 							toast.setGravity(0, 0, 15);
 							toast.show();
@@ -1337,7 +1335,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 							tvuni4.setVisibility(View.VISIBLE);
 							tvuni4.setText(unidad);
 							tvuni4.setFocusable(true);
-						}*/
+						}
 						des4 = (String)spInfraccion.getItemAtPosition(position);
 						tveliminar4.setVisibility(View.VISIBLE);
 						etDesc4.setText(t);
@@ -2181,7 +2179,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
         spMedida.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, reglamento));
         spReglamento.setVisibility(View.GONE);
         
-        if(id == 12) {
+        if(id == 12 || id == 4) {
         	adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cmedida);
         	etNombreComercial.setVisibility(View.VISIBLE);
         	spMedida.setAdapter(adapter);
@@ -2208,6 +2206,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
         	iComp = new int [reglamento.size() - 1];
         	comp = new String [reglamento.size() - 1];
         }
+
+        medidas("");
         
         for (int i = 0; i < reglamento.size(); i++) {
         	System.err.println(reglamento.get(i));
@@ -2546,7 +2546,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 								spdesignado.getSelectedItem().toString(), etNombreT1.getText().toString(), spIdentificaT1.getSelectedItem().toString() + ":" +  etIfeT2.getText().toString(), 
 								spdesignado1.getSelectedItem().toString(), usoCatalogo,etSeleccion.getText().toString(), etInfraccion.getText().toString(), id_hechos, 
 								spuso.getSelectedItem().toString(), ""/*etDensidad.getText().toString()*/, etManifiesta.getText().toString(), 
-								Integer.parseInt(spgravedad.getSelectedItem().toString()), Integer.parseInt(etDiaPlazo.getText().toString()), etfecha.getText().toString(), hr, etCondominio.getText().toString(), etLote.getText().toString(), etManzana.getText().toString(), etReferencia.getText().toString(), etCorreo.getText().toString(), "", etConstruccion.getText().toString(),idComp,etEntreC.getText().toString(),etEntreC1.getText().toString(),etResponsable.getText().toString(),etRegistro.getText().toString(),"N",identifica,
+								Integer.parseInt(spgravedad.getSelectedItem().toString()), Integer.parseInt(etDiaPlazo.getText().toString()), etfecha.getText().toString(), hr, etCondominio.getText().toString(), etLote.getText().toString(), etManzana.getText().toString(), etReferencia.getText().toString(), "", "", etConstruccion.getText().toString(),idComp,etEntreC.getText().toString(),etEntreC1.getText().toString(),etResponsable.getText().toString(),etRegistro.getText().toString(),"N",identifica,
 								spPeticion.getSelectedItem().toString(),firmas,etMotivo.getText().toString(),etMedida.getText().toString(),etArticulo.getText().toString(),
 								id_inspector3,id_inspector4,id_inspector5,id_inspector6,idCompetencia1,idCompetencia2,idCompetencia3,idCompetencia4,idCompetencia5,etLGiro.getText().toString().trim(),etAGiro.getText().toString(),axo,etNombreComercial.getText().toString(),etSector.getText().toString(),spNE.getSelectedItem().toString(),reincidencia) + "");
 					
@@ -2641,7 +2641,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 									spdesignado1.getSelectedItem().toString(), usoCatalogo, etSeleccion.getText().toString(), etInfraccion.getText().toString(), id_hechos, 
 									spuso.getSelectedItem().toString(), ""/*etDensidad.getText().toString()*/, etManifiesta.getText().toString(), 
 									Integer.parseInt(spgravedad.getSelectedItem().toString()), Integer.parseInt(etDiaPlazo.getText().toString()), etfecha.getText().toString(), 
-									fecha + " " + hr, "POR CALIFICAR",etCondominio.getText().toString() + " ",etManzana.getText().toString(),etLote.getText().toString(), etReferencia.getText().toString(), etCorreo.getText().toString(), /*etAlineamiento.getText().toString()*/"", etConstruccion.getText().toString(), etEntreC.getText().toString(),etEntreC1.getText().toString(),etResponsable.getText().toString(),etRegistro.getText().toString(),idComp,
+									fecha + " " + hr, "POR CALIFICAR",etCondominio.getText().toString() + " ",etManzana.getText().toString(),etLote.getText().toString(), etReferencia.getText().toString(), "", /*etAlineamiento.getText().toString()*/"", etConstruccion.getText().toString(), etEntreC.getText().toString(),etEntreC1.getText().toString(),etResponsable.getText().toString(),etRegistro.getText().toString(),idComp,
 									etMedida.getText().toString(),etArticulo.getText().toString().trim(),etMotivo.getText().toString().trim(),id_inspector3,id_inspector4,id_inspector5,id_inspector6,
 									idCompetencia1,idCompetencia2,idCompetencia3,idCompetencia4,idCompetencia5
 									,etLGiro.getText().toString().trim(),etAGiro.getText().toString(),axo,etNombreComercial.getText().toString(),etSector.getText().toString(),conf,spPeticion.getSelectedItem().toString(),spNE.getSelectedItem().toString(),reincidencia,/*"http://172.16.1.21/serverSQL/insertLevantamiento.php"*/"http://10.10.23.54/infracciones/serversql/insertLevantamientoas.php"/*"http://pgt.no-ip.biz/serverSQL/insertLevantamiento.php"/"http://192.168.0.15/serverSQL/insertLevantamiento.php"*/).equalsIgnoreCase("S")) {
@@ -2897,7 +2897,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     }
     
     public void modificar() {
-    	infraccion = 0;
+    	/*infraccion = 0;
     	co = 0;
 		rlcampo.setVisibility(View.VISIBLE);
 		etEspecificacion.setEnabled(true);
@@ -3002,7 +3002,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 		tveliminar4.setVisibility(View.GONE);
 		tveliminar4.setEnabled(true);
 		desc4 = false;
-		des4 = "";
+		des4 = "";*/
 		
 		btnSi.setEnabled(true);
 		btnNo.setEnabled(true);
@@ -3090,7 +3090,6 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 		etRegistro.setEnabled(false);
 		etEntreC.setEnabled(false);
 		etEntreC1.setEnabled(false);
-		etCorreo.setEnabled(false);
 		etMedida.setEnabled(false);
 		etArticulo.setEnabled(false);
 		
@@ -3463,6 +3462,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 			}finally{
 				cursor.close();
 				db.close();
+				Log.v("change", "ok");
+				adapter.notifyDataSetChanged();
 			}
     	}
     }
@@ -4051,8 +4052,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	r += (etdato3.getVisibility() == View.VISIBLE && validarCampos(this.etdato3)) ? 1 : 0;
     	r += (etdato4.getVisibility() == View.VISIBLE && validarCampos(this.etdato4)) ? 1 : 0;
     	Log.i("r", String.valueOf(r));
-    	//return r;
-    	return 0;
+    	return r;
+    	//return 0;
     }
     
     public static boolean validarCampos(EditText et){
@@ -4444,7 +4445,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 	    			//System.out.println(c.getString(2) + " " + c.getString(c.getColumnIndex("id_c_direccion")));
 	    			//if(c.getString(c.getColumnIndex("vigente")).trim().equalsIgnoreCase("S")) {
 		    			id_hecho.add(c.getInt(0));
-		    			arregloInfraccion.add(c.getString(2));
+		    			arregloInfraccion.add(c.getString(0) + " " + c.getString(2));
 		    			//System.out.println(c.getString(2) + " do " + c.getString(c.getColumnIndex("id_c_direccion")));
 		    			//Log.i("listado", "Infraccion: " + c.getString(2));
 	    			//}
@@ -4754,7 +4755,8 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     	String cam = "";
     	
     	try{
-    	Cursor c = db.rawQuery("SELECT * FROM C_infraccion WHERE infraccion = '" + nom + "'", null);
+    	Cursor c = db.rawQuery("SELECT * FROM C_infraccion WHERE infraccion like '%" + nom.substring(4,(nom.length()-1)) + "%'", null);
+    	Log.v("sql","SELECT * FROM C_infraccion WHERE infraccion like '" + nom.substring(4,(nom.length()-1)) + "%'");
     	if(c.moveToFirst()){
     		do{
     			id_infra = c.getInt(0);
@@ -5204,7 +5206,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 			rlProp.setVisibility(View.VISIBLE);
 			rlTestA.setVisibility(View.VISIBLE);
 			rlVisita.setVisibility(View.VISIBLE);
-			llNota.setVisibility(View.GONE);
+			llNota.setVisibility(View.VISIBLE);
 			llplazo.setVisibility(View.VISIBLE);
 			llreincidencia.setVisibility(View.GONE);
 			ante = "IN";
@@ -6944,7 +6946,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
                             canvas.restoreState();
                         }
 				        
-				        canvas.saveState();
+				        /*canvas.saveState();
 				        bf = BaseFont.createFont(BaseFont.HELVETICA_BOLD, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
 				        canvas.beginText();
 				        canvas.setFontAndSize(bf, 10);
@@ -6978,7 +6980,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 				        canvas.moveText(260, 90);
 				        canvas.showText(a + "");
 				        canvas.endText();
-				        canvas.restoreState();
+				        canvas.restoreState();*/
 				        
 				        
 					    
@@ -11198,7 +11200,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
     		do{
     			if(cursor.getString(cursor.getColumnIndex("vigente")).trim().equalsIgnoreCase("S")) {
 	    			id_hecho.add(cursor.getInt(0));
-	    			arregloInfraccion.add(cursor.getString(2));
+	    			arregloInfraccion.add(cursor.getString(0) + " " + cursor.getString(2));
 	    			Log.i("listado", "Infraccion: " + cursor.getString(2));
     			}
     		}while(cursor.moveToNext());
@@ -11438,7 +11440,7 @@ public class InfraccionesActivity extends Activity implements OnClickListener, R
 		case R.id.spMedida:
 			if(!spMedida.getSelectedItem().toString().equalsIgnoreCase("")) {
 				medidas1 = spMedida.getSelectedItem().toString();
-				if(id == 12) {
+				if(id == 12 || id == 4) {
 					etMedida.setText(spMedida.getSelectedItem().toString());
 					etArticulo.setText(art.get(spMedida.getSelectedItemPosition()).trim() + " del " + orden.get(spMedida.getSelectedItemPosition()).trim());
 				}

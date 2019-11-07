@@ -1346,7 +1346,7 @@
 									android:layout_toRightOf="@id/tvPropietario"
 									android:imeOptions="actionNext"/>
 								
-								<TextView
+								<!--<TextView
 							        android:id="@+id/tvEmail"
 									android:layout_width="wrap_content"
 									android:layout_height="wrap_content"
@@ -1365,7 +1365,7 @@
 									android:layout_below="@id/etpropietario"
 									android:layout_toRightOf="@id/tvEmail"
 									android:imeOptions="actionNext"
-									android:layout_marginBottom="20dp"/>
+									android:layout_marginBottom="20dp"/>-->
 						
 						</RelativeLayout>
 						
@@ -1916,7 +1916,7 @@
 										android:id="@+id/btnModificar"
 										android:layout_width="wrap_content"
 										android:layout_height="wrap_content"
-										android:text="@string/modificar"
+										android:text="@string/agregar"
 										android:visibility="gone"
 										android:layout_toRightOf="@id/btnaceptar"
 										style="@style/Boton"/>
@@ -1976,6 +1976,11 @@
 									android:text="@string/medida"
 									android:layout_gravity="center" 
 									style="@style/Subtitle"/>
+
+								<Spinner android:id="@+id/spMedida"
+									android:layout_width="fill_parent"
+									android:layout_height="wrap_content"
+									android:layout_below="@id/tvMedidaSeguridad"/>
 			    		
 			    		
 								<EditText 
@@ -1983,8 +1988,7 @@
 									android:layout_width="fill_parent"
 									android:layout_height="140dp"
 									android:hint="@string/medida"
-									android:layout_below="@id/etinfraccion"
-									android:layout_toRightOf="@id/tvMedidaSeguridad"
+									android:layout_below="@id/spMedida"
 									android:inputType="textMultiLine|textCapSentences"
 									android:enabled="true"/>
 							
@@ -2007,10 +2011,7 @@
 									android:inputType="textMultiLine|textCapSentences"
 									android:enabled="true"/>
 								
-								  <Spinner android:id="@+id/spMedida" 
-								      android:layout_width="fill_parent" 
-								      android:layout_height="wrap_content" 
-								      android:layout_below="@id/etArticulos"/>
+
 								
 								<TextView 
 							    	android:id="@+id/tvgiro"
